@@ -1,0 +1,60 @@
+{
+  "name": "Example_sand_over_rock_96in",
+  "pile": {
+    "L_ft": 40.0,
+    "D_in": 96.0,
+    "n_elements": 120,
+    "head_fixed": false,
+    "tip_cond": "free",
+    "ei_mode": "rc",
+    "fc_psi": 3850.0,
+    "E_ksi": 29000.0,
+    "I_in4": 900.0,
+    "EI_kip_in2": 1000000000.0,
+    "My_kip_in": 150000.0,
+    "alpha": 0.05
+  },
+  "layers": [
+    {
+      "z_top_ft": 0.0,
+      "z_bot_ft": 16.0,
+      "model": "reese_sand",
+      "loading": "static",
+      "fields": {
+        "phi_deg": 30.0,
+        "gamma_pcf": 115.0,
+        "k_pci": 0.0
+      }
+    },
+    {
+      "z_top_ft": 16.0,
+      "z_bot_ft": 50.0,
+      "model": "strong_rock",
+      "loading": "static",
+      "fields": {
+        "ucs_top_psi": 1000.0,
+        "ucs_bot_psi": 8000.0
+      }
+    }
+  ],
+  "loads": [
+    {
+      "name": "LC-mid",
+      "V_kip": 79.0,
+      "M_kipft": 8750.0,
+      "P_kip": 3871.0
+    },
+    {
+      "name": "LC-high",
+      "V_kip": 82.4,
+      "M_kipft": 13833.0,
+      "P_kip": 3836.0
+    },
+    {
+      "name": "LC-shear",
+      "V_kip": 630.0,
+      "M_kipft": 1775.0,
+      "P_kip": 2216.0
+    }
+  ]
+}
